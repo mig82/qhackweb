@@ -1,0 +1,158 @@
+/*Login form container div*/
+#li-form-container{
+	background: transparent url("/img/login_banner.svg") no-repeat scroll center bottom / cover;
+	@include box-shadow-helper(4);
+
+	.container{
+		padding-top: 10em;
+		padding-bottom: 25em;
+	}
+
+	input{
+		background-color: $input-transp-color;
+		color: #444;
+		margin-bottom: 0.4em;
+		@include box-shadow-helper(2);
+	}
+}
+
+.li-form-subcontainer{
+	background-color: $form-transp-color;
+	padding: 0.7em;
+	@include box-shadow-helper(4);
+}
+
+.li-head{
+	color: #666 !important;
+}
+
+.li-btn{
+	line-height: 1em;
+	font-weight: 600;
+	color: #FFF !important;
+	text-align: center;
+	padding: 16px 14px 13px 56px;
+	@include box-shadow-helper(2);
+	@include border-radius(0);
+	border: none;
+	position: relative;
+	margin-bottom: 0.5em;
+}
+
+@mixin li-btn-background-mix($color1, $color2){
+	background: transparent    -moz-linear-gradient($color1, $color2) repeat scroll 0% 0%;
+	background: transparent -webkit-linear-gradient($color1, $color2) repeat scroll 0% 0%;
+	background: transparent      -o-linear-gradient($color1, $color2) repeat scroll 0% 0%;
+	background: transparent     -ms-linear-gradient($color1, $color2) repeat scroll 0% 0%;
+	background: transparent         linear-gradient($color1, $color2) repeat scroll 0% 0%;
+}
+
+.li-btn-li{
+	@extend .li-btn;
+	@include li-btn-background-mix(#0177b5, #2D4373);
+}
+
+.li-btn-li::before{
+	content: " ";
+	background: transparent url("/img/li-icons/li-li-ico.svg") no-repeat scroll center center;
+	position: absolute;
+	display: block;
+	border-right: 1px solid #758AB6;
+	box-shadow: -1px 0px 0px 0px #2D4373 inset;
+	left: 0px;
+	top: 0px;
+	text-align: center;
+	padding: 28px 18px 13px;
+	font-size: 16px !important;
+}
+
+.li-btn-xi{
+	@extend .li-btn;
+	@include li-btn-background-mix(#006464, #135353);
+}
+
+.li-btn-xi::before{
+	content: " ";
+	background: transparent url("/img/li-icons/xi-li-ico.png") no-repeat scroll center center/1.5em auto;
+	position: absolute;
+	display: block;
+	border-right: 1px solid #758AB6;
+	box-shadow: -1px 0px 0px 0px #2D4373 inset;
+	left: 0px;
+	top: 0px;
+	text-align: center;
+	padding: 28px 18px 13px;
+	font-size: 16px !important;
+}
+
+.li-btn-fb{
+	@extend .li-btn;
+	@include li-btn-background-mix(#3B5998, #2D4373);
+}
+
+.li-btn-fb:hover, .li-btn-fb:visited, .li-btn-fb:link, .li-btn-fb:active,
+.li-btn-fb:hover, .li-btn-fb:visited, .li-btn-fb:link, .li-btn-fb:active{
+	text-decoration: none;
+};
+
+.li-btn-fb::before{
+	content: " ";
+	background: transparent url("/img/li-icons/fb-li-ico.png") no-repeat scroll center center;
+	position: absolute;
+	display: block;
+	border-right: 1px solid #758AB6;
+	box-shadow: -1px 0px 0px 0px #2D4373 inset;
+	left: 0px;
+	top: 0px;
+	text-align: center;
+	padding: 28px 18px 13px;
+	font-size: 16px !important;
+}
+
+.li-btn-g{
+	@extend .li-btn;
+	@include li-btn-background-mix(#FE5347, #FF3A10);
+}
+
+.li-btn-g:hover, .li-btn-g:visited, .li-btn-g:link, .li-btn-g:active,
+.li-btn-g:hover, .li-btn-g:visited, .li-btn-g:link, .li-btn-g:active{
+	text-decoration: none;
+};
+
+.li-btn-g::before{
+	content: " ";
+	background: transparent url("/img/li-icons/g-li-ico.png") no-repeat scroll center center / 2.8em auto;
+	position: absolute;
+	display: block;
+	border-right: 1px solid #B67575;
+	box-shadow: -1px 0px 0px 0px #B94D4D inset;
+	left: 0px;
+	top: 0px;
+	text-align: center;
+	padding: 28px 18px 13px;
+	font-size: 16px !important;
+}
+
+.li-btn-t{
+	@extend .li-btn;
+	@include li-btn-background-mix(#2FC2EF, #3F859B);
+}
+
+.li-btn-t:hover, .li-btn-t:visited, .li-btn-t:link, .li-btn-t:active,
+.li-btn-t:hover, .li-btn-t:visited, .li-btn-t:link, .li-btn-t:active{
+	text-decoration: none;
+};
+
+.li-btn-t::before{
+	content: " ";
+	background: transparent url("/img/li-icons/t-li-ico.png") no-repeat scroll center center / 1.5em auto;
+	position: absolute;
+	display: block;
+	border-right: 1px solid #75B1B6;
+	box-shadow: -1px 0px 0px 0px #4DB5B9 inset;
+	left: 0px;
+	top: 0px;
+	text-align: center;
+	padding: 28px 18px 13px;
+	font-size: 16px !important;
+}

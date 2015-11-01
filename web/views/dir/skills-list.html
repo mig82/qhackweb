@@ -1,0 +1,12 @@
+<div class="container-fluid">
+	
+	<div class="row">
+		<ul class="list-inline tags-container col-xs-12">
+			<li class="std-tag" ng-repeat="skill in survey.skills track by skill.id">
+				<small class="text-capitalize">{{skill.name}}</small>
+				&nbsp;
+				<a class="delete" data-ng-click="removeSkill(skill)">&times;</a>
+			</li>
+		</ul>
+	</div>
+</div>

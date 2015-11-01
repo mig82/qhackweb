@@ -1,0 +1,71 @@
+
+.vert-group-bar-chart {
+	max-height: 150px;
+	max-width: 300px
+}
+
+.vert-group-bar-chart .legend {
+	fill: #666;
+	font-size: 10px;
+	text-anchor: start;
+}
+
+.vert-group-bar-chart text {
+	fill: #666;
+	font-size: 10px;
+	text-anchor: end;
+}
+
+.vert-group-bar-chart .label {
+	/*fill: black;
+	font-size: 1.5vh;
+	text-anchor: end;
+	text-transform: capitalize;
+	white-space: pre-line;*/
+	display: none;
+}
+
+/*.bar:hover {
+	fill: brown;
+}*/
+
+.axis path,
+.axis line {
+	/*fill: none;
+	stroke: #000;
+	shape-rendering: crispEdges;*/
+	display: none;
+}
+
+.bar{
+	stroke: none !important;
+}
+.bar-seniors{
+	@extend .bar;
+	fill: $seniors-color;
+}
+
+.bar-peers{
+	@extend .bar;
+	fill: $peers-color;
+}
+
+.bar-juniors{
+	@extend .bar;
+	fill: $juniors-color;
+}
+
+.bar-others{
+	@extend .bar;
+	fill: $others-color;
+}
+
+.bar-you{
+	@extend .bar;
+	fill: $self-color;
+}
+
+.bar-rest{
+	@extend .bar;
+	fill: $rest-color;
+}

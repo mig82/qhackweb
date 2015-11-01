@@ -1,0 +1,118 @@
+<div data-ng-controller="GuestSelectCtrl">
+	<h2 class="text-capitalize" id="head3">3. Tell us who knows your work</h2>
+	<div class="panel panel-default">
+		<div class="panel-heading">&nbsp;</div>
+		<div class="panel-body">
+			
+			<span class="help-block">
+				<p>Tell us who have you worked with recently and what was their working relationship with you.</p>
+			</span>
+
+			<!--table class="table table-hover table-condensed">
+				<tr>
+					<th class="text-capitalize"><input type="checkbox" data-ng-click="toggleAllInvitations()"></th>
+					<th class="text-capitalize">name</th>
+					<th class="text-capitalize">working relationship</th>
+					<th>e-mail</th>
+					<th>&nbsp;</th>
+				</tr>
+
+				<tr data-ng-repeat="guest in guestOptions" data-ng-class="{success:guest.selected}" data-ng-click="toggleGuestSelection(guest, $index)">
+					<td>
+						<input type="checkbox" data-ng-model="guest.selected" data-ng-change="toggleGuestSelection(guest)">
+					</td>
+					<td>
+						<input type="text" class="form-control text-capitalize" data-ng-model="guest.name">
+					</td>
+					<td>
+						<ui-select data-ng-model="guest.type" data-ng-change="calcGuestsSummary()"
+							theme="bootstrap" >
+							<ui-select-match placeholder="Select a type..." class="text-capitalize">{{$select.selected.name}}</ui-select-match>
+							<ui-select-choices repeat="type in feedbackTypes | filter: $select.search">
+								<span class="text-capitalize" ng-bind-html="type.name | highlight: $select.search" title="{{type.desc}}"></span>
+								
+							</ui-select-choices>
+						</ui-select>
+					</td>
+					<td>
+						<input type="text" class="form-control" data-ng-model="guest.email" placeholder="youremail@yourdomain.com">
+					</td>
+					<td>
+						<button type="button" class="flat-btn" data-ng-click="removeGuestOptionAt($index)">
+							<span class="glyphicon glyphicon-remove"></span>
+						</button>
+					</td>
+				</tr>
+			</table-->
+
+			<div class="container-fluid">
+				<div class="row my-row" >
+					<div class="col-xs-1 my-col"></div>
+
+					<div class="col-xs-10 my-col">
+
+						<div class="container-fluid hidden-xs">
+							<div>
+								<div class="col-xs-8 col-sm-4 my-col"><strong class="text-capitalize">name</strong></div>
+								<div class="col-xs-4 col-sm-4 my-col"><strong class="text-capitalize">working relationship</strong></div>
+								<div class="col-xs-12 col-sm-4 my-col"><strong>e-mail</strong></div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-1 my-col"></div>
+				</div>
+
+				<div class="row my-row" data-ng-repeat="guest in guestOptions" data-ng-class="{'selected':guest.selected}" >
+					<div class="col-xs-1 my-col my-col-narrow">
+						<input type="checkbox" data-ng-model="guest.selected" data-ng-change="toggleGuestSelection(guest)">
+					</div>
+					<div class="col-xs-10 my-col">
+						
+						<div class="container-fluid">
+							<div class="row">
+								
+								<div class="col-xs-12 col-sm-4 my-col">
+									<small class="text-capitalize hidden-sm hidden-md hidden-lg">name</small>
+									<input type="text" class="form-control text-capitalize" data-ng-model="guest.name" placeholder="name">
+								</div>
+								
+								<div class="col-xs-12 col-sm-4 my-col">
+									<small class="text-capitalize hidden-sm hidden-md hidden-lg">working relationship</small>
+									<ui-select data-ng-model="guest.type" data-ng-change="calcGuestsSummary()" theme="bootstrap" >
+										<ui-select-match placeholder="Select a type..." class="text-capitalize">{{$select.selected.name}}</ui-select-match>
+										<ui-select-choices repeat="type in feedbackTypes | filter: $select.search">
+											<span class="text-capitalize" ng-bind-html="type.name | highlight: $select.search" title="{{type.desc}}"></span>
+											<!--small ng-bind-html="type.desc | highlight: $select.search"></small-->
+										</ui-select-choices>
+									</ui-select>
+								</div>
+
+								<div class="col-xs-12 col-sm-4 my-col">
+									<small class="hidden-sm hidden-md hidden-lg">e-mail</small>
+									<input type="text" class="form-control" data-ng-model="guest.email" placeholder="youremail@yourdomain.com">	
+								</div>
+
+							</div>
+						</div>
+
+					</div>
+					<div class="col-xs-1 my-col">
+						<button type="button" class="flat-btn" data-ng-click="removeGuestOptionAt($index)">
+							<span class="glyphicon glyphicon-remove"></span>
+						</button>
+					</div>
+
+				</div>
+				
+			</div>
+			<br>
+
+		</div><!--panel-body-->
+		
+		<div class="position-relative">
+			<button type="button" class="floating-btn" data-ng-click="addGuestOption()">
+				<span class="glyphicon glyphicon-plus"></span>
+			</button>
+		</div>
+	</div>
+</div>

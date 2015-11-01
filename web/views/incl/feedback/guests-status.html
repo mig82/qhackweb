@@ -1,0 +1,40 @@
+<div data-ng-controller="StatusCtrl">
+	<h2 class="text-capitalize">status of invites</h2>
+	<div class="panel panel-default">
+		<div class="panel-heading">&nbsp;</div>
+		<div class="panel-body no-padding-xs">
+
+			<span class="help-block">
+				<p>Here you can see how many invites have been fulfilled out of the ones sent.</p>
+			</span>
+			<div data-ng-include="'views/incl/guests-summary.html'"></div>
+
+			<div data-ng-show="survey.guestsTotals.answered < survey.guestsTotals.invited">
+
+				<span class="help-block">
+					<p>Some of your colleagues have not responded to your feedback request yet. Would you like to send them a gentle reminder?</p>
+				</span>
+
+				<button type="button" class="btn btn-default btn-block" data-ng-click="writeReminderIsCollapsed = !writeReminderIsCollapsed">
+					<span class="glyphicon glyphicon-pencil"></span>
+					<span class="text-capitalize">write gentle reminder</span>
+				</button>
+
+				<div collapse="writeReminderIsCollapsed">
+					<textarea class="form-control" rows="3" data-ng-change="save()"
+						ui-tinymce data-ng-model="gentleReminder.msg"
+						placeholder="Hey guys, I just wanted to remind you to...">
+					</textarea>
+					<br>
+
+					<button type="button" class="btn btn-default btn-block" >
+						<span class="glyphicon glyphicon-send"></span>&nbsp;
+						<span class="text-capitalize">send</span>
+					</button>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+</div><!-- StatusCtrl -->

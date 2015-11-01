@@ -1,0 +1,55 @@
+.material-btn{
+	@include border-radius(0);
+	text-transform: uppercase;
+	font-weight: bold;
+	cursor: pointer;
+
+	&:hover,
+	&:active{
+		text-decoration: none;
+		color: #fff !important;
+	}
+}
+
+.position-relative{
+	position: relative;
+}
+
+.floating-btn{
+	@extend .material-btn; 
+	@include border-radius(100%);
+	@include box-shadow-helper(2);
+	width: 2.5em;
+	height: 2.5em;
+	background-color: $brick-red-color;
+	color: $white-color;
+	text-align: center;
+	border: none;
+	transition: all 200ms ease 0s;
+	position: absolute;
+	top: -1.5em;
+	z-index: 100;
+	right: 1em;
+
+	&:hover {
+		background-color: red;
+		transform: scale(1.1);
+	}
+}
+
+.raised-btn{
+	@extend .material-btn; 
+	@include box-shadow-helper(2);
+	background-color: $brick-red-color;
+	border: none;
+	color: $white-color;
+	padding: 0.5em 2em;
+}
+
+.flat-btn{
+	@extend .material-btn; 
+	background-color: $white-color;
+	border: none;
+	color: $cyan-color;
+}
+

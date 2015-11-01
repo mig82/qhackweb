@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="lib/radar-chart-d3/src/radar-chart.css" >
+	<script src="lib/d3/d3.min.js" ></script>
+	<script src="lib/radar-chart-d3/nbremer/RadarChart.js" ></script>
+	<link rel="stylesheet" type="text/css" href="css/qhack.css">
+
+	<title>Spider</title>
+</head>
+	<body>
+
+		<div id="chart2">chart goes here</div>
+
+			<script type="text/javascript">
+				var data = [
+					{
+						className: "self",
+						axes: [
+							{axis: "strength", value: 13}, 
+							{axis: "intelligence", value: 1}, 
+							{axis: "charisma", value: 8},  
+							{axis: "dexterity", value: 4},  
+							{axis: "luck and luck", value: 9}
+						]
+					},
+					{
+						className: "rest",
+						axes: [
+							{axis: "strength", value: 3}, 
+							{axis: "intelligence", value: 15}, 
+							{axis: "charisma", value: 4}, 
+							{axis: "dexterity", value: 1},  
+							{axis: "luck and luck", value: 15}
+						]
+					}
+				];
+
+				var w = 300;
+				var h = 300;
+
+				var cfg = {
+					//containerClass: 'radar-chart', // target with css, default stylesheet targets .radar-chart
+					radius: 2,
+					w: w,
+					h: h,
+					factor: 1,//0.95,
+					factorLegend: 0.9,
+					levels: 5,
+					maxValue: 5,
+					radians: 2 * Math.PI,
+					//color: d3.scale.category10(), // pass a noop (function() {}) to decide color via css
+					color: function(){},
+					axisLine: true,
+					axisText: true,
+					circles: true,
+					radius: 5,
+					axisJoin: function(d, i) {
+						return d.className || i;
+					},
+					transitionDuration: 300,
+					ExtraWidthX: 200,
+					ExtraWidthY: 50,
+					TranslateX: 90,
+				};
+
+				RadarChart.draw("#chart2", data, cfg);
+				
+
+
+
+				/*var chart = RadarChart.chart();
+				var svg = d3.select('body').append('svg')
+				  .attr('width', 600)
+				  .attr('height', 800);
+
+				// draw one
+				svg.append('g').classed('focus', 1).datum(data).call(chart);*/
+			</script>
+	</body>
+</html>

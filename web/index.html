@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="qhack" >
+	<head>
+		<meta charset="UTF-8">
+		
+		<!--Responsive scaling-->
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="bower_components/ui-select/dist/select.min.css">
+
+		<link rel="stylesheet" type="text/css" href="css/qhack.css">
+
+		<link rel="stylesheet" type="text/css" href="lib/radar-chart-d3/src/radar-chart.css" >
+
+		<title>QHack</title>
+	</head>
+	<body>
+		<div id="main" data-ui-view></div>
+		
+		<svg id="bgPattern1" xmlns='http://www.w3.org/2000/svg' width='8' height='8' class="bg-pattern">
+			<rect width='8' height='8' fill='#fff'/>
+			<path d='M0 0L8 8ZM8 0L0 8Z' stroke-width='1' stroke='#eee'/>
+		</svg>
+
+		<script src="bower_components/angular/angular.min.js" ></script>
+		<script src="bower_components/angular-touch/angular-touch.min.js" ></script>
+		<script src="bower_components/angular-bootstrap/ui-bootstrap.min.js" ></script>
+		<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js" ></script>
+		<script src="bower_components/angular-animate/angular-animate.min.js" ></script>
+		<!--script src="bower_components/angular-resource/angular-resource.min.js"></script-->
+		<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+		<script src="bower_components/angular-sanitize/angular-sanitize.min.js" ></script>
+		<script src="bower_components/angular-cookies/angular-cookies.min.js" ></script>
+
+		<script type="text/javascript" src="bower_components/tinymce-dist/tinymce.min.js"></script>
+		<script type="text/javascript" src="bower_components/angular-ui-tinymce/src/tinymce.js"></script>
+
+		<script type="text/javascript" src="bower_components/underscore/underscore-min.js"></script>
+
+		<!--script src="bower_components/ng-file-upload-shim/ng-file-upload-shim.min.js"></script--> <!-- for no html5 browsers support -->
+		<!--script src="bower_components/ng-file-upload/ng-file-upload.min.js"></script-->
+
+		<script type="text/javascript" src="bower_components/ui-select/dist/select.min.js" ></script>
+
+		<script type="text/javascript" src="lib/d3/d3.min.js" ></script>
+		<!--script src="lib/radar-chart-d3/src/radar-chart.min.js" ></script-->
+		<script type="text/javascript" src="lib/radar-chart-d3/nbremer/RadarChart.js" ></script>
+
+		<script type="text/javascript" src="lib/decimal-rounding.js" ></script>
+		
+		<!--
+			IE8 support, see AngularJS Internet Explorer Compatibility http://docs.angularjs.org/guide/ie
+			For Firefox 3.6, you will also need to include jQuery and ECMAScript 5 shim
+		-->
+		<!--[if lt IE 9]>
+			<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+			<script src="http://cdnjs.cloudflare.com/ajax/libs/es5-shim/2.2.0/es5-shim.js"></script>
+			<script>
+				document.createElement('ui-select');
+				document.createElement('ui-select-match');
+				document.createElement('ui-select-choices');
+			</script>
+		<![endif]-->
+
+		<script src="bundle.js"></script>
+	
+		<script type="text/javascript">
+			var svg = document.getElementById('bgPattern1');
+
+			// Convert the SVG node to HTML.
+			var div = document.createElement('div');
+			div.appendChild(svg.cloneNode(true));
+
+			// Encode the SVG as base64
+			var b64 = 'data:image/svg+xml;base64,'+window.btoa(div.innerHTML);
+			var url = 'url("' + b64 + '")';
+			document.body.style.backgroundImage = url;
+		</script>
+
+		
+		
+	</body>
+</html>

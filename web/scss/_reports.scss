@@ -1,0 +1,59 @@
+.report-row{
+	padding-bottom: 2em;
+}
+
+@media screen and (min-width: $screen-xs-max){
+	.chart{
+		@include box-shadow-helper(1);
+		padding: 0.5em 0.5em 0;
+	}
+}
+
+.rag-icon{
+	@include border-radius(100%);
+	@include box-shadow-helper(2);
+	width: 2em;
+	height: 2em;
+	text-align: center;
+	border: none;
+	padding: 0.5em 0.5em 0.3em 0.5em;
+	margin: 0.1em;
+
+}
+
+.rag-red-icon{
+	@extend .rag-icon;
+	background-color: $white-color;
+	color: red;
+}
+
+.rag-amber-icon{
+	@extend .rag-icon;
+	background-color: $white-color;
+	color: $amber-color;
+}
+
+.rag-green-icon{
+	@extend .rag-icon;
+	background-color: $white-color;
+	color: $teal-color;
+}
+
+.analysis-table{
+	@include box-shadow-helper(1);
+	font-size: 1em;
+
+	td{
+		padding: 1em;
+
+		.analysis-text{
+			margin-bottom: 0px !important;
+		}
+	}
+
+}
+
+.emphasis{
+	font-weight: bold;
+	font-style: italic;
+}

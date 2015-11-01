@@ -1,0 +1,15 @@
+.skill-rating .glyphicon-star{
+	color: #0015FF;
+}
+
+.skills-table-viewport{
+	max-height: 60vh;
+	overflow-y: auto;
+}
+
+ @media screen and (max-width: $screen-xs-max){
+ 	.skill-rating{
+		font-size: 0.65em;
+	}
+ }
+

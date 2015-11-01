@@ -1,0 +1,106 @@
+<div class="_container">
+	<div class="row">
+		<div class="col-xs-12" data-ng-include="'views/incl/feedback/guests-status.html'"></div>
+	</div>
+	
+	<div class="row">
+		<div class="col-xs-12">
+			
+			<div data-ng-controller="ReportCtrl">
+				<h2 class="text-capitalize">report</h2>
+				
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<span class="text-capitalize">summary</span>
+					</div>
+					
+					<div class="panel-body no-padding-xs">
+						<div class="container-fluid">
+							<div class="row report-row">
+								<div class="col-xs-12 col-md-6">
+									
+									<spiderweb-chart data="data"></spiderweb-chart>
+									<!--div class="position-relative">
+										<button type="button" class="btn btn-block floating-btn pull-right lift-a-bit" ><!--TODO: Raise modal with paneable graphic->
+											<span class="glyphicon glyphicon-resize-full"></span>
+										</button>
+									</div-->
+									<br>
+								</div>
+
+								<div class="col-xs-12 col-md-6">
+									
+									
+
+								</div>
+							</div><!--row-->
+						</div><!--container-fluid-->
+					</div><!--panel-body-->
+				</div><!--panel-->
+
+				<h2 class="text-capitalize">breakdown</h2>
+
+				<div class="panel panel-default" data-ng-repeat="d in dataSets track by $index" data-ng-init="skillName = d[0].labels[0]">
+					<div class="panel-heading">
+						<span class="text-capitalize">{{skillName}}</span><!--Skill Name-->
+					</div>
+					
+					<div class="panel-body no-padding-xs">
+						<div class="container-fluid">
+							<div class="row report-row">
+								<div class="col-xs-12 col-md-4" >
+									<h5>How your colleagues see you.</h5>
+									<vert-group-bar-chart chart-id="'barchart1'" data="d[0]"></vert-group-bar-chart>
+									<br>
+								</div>
+								<div class="col-xs-12 col-md-4">
+									<h5>Compared with others with a similar career.</h5>
+									<vert-group-bar-chart chart-id="'barchart2'" data="d[1]"></vert-group-bar-chart>
+									<br>
+								</div>
+								<div class="col-xs-12 col-md-4">
+									<h5 class="text-capitalize">analysis</h5>
+									<table class="analysis-table" data-ng-class="{
+										'bg-danger text-danger': 	diffs[skillName].rag.r,
+										'bg-warning text-warning': 	diffs[skillName].rag.a,
+										'bg-success text-success': 	diffs[skillName].rag.g}">
+										
+										<tr>
+											<td>
+												<span data-ng-class="{
+													'rag-red-icon': 	diffs[skillName].rag.r,
+													'rag-amber-icon': 	diffs[skillName].rag.a,
+													'rag-green-icon': 	diffs[skillName].rag.g}">
+													<span class="glyphicon" data-ng-class="{
+														'glyphicon-fire': 				diffs[skillName].rag.r,
+														'glyphicon-exclamation-sign': 	diffs[skillName].rag.a,
+														'glyphicon-star': 				diffs[skillName].rag.g}">
+													</span></span>
+											</td><td>
+												<p class="analysis-text" data-ng-init="diff = diffs[skillName].value">
+													You've scored&nbsp;
+													<span data-ng-show="diff>=0">{{diff}} points above</span>
+													<span data-ng-show="diff<0">{{-diff}} points below</span>&nbsp;
+													the average for other&nbsp;
+													<span class="emphasis"><span class="text-capitalize ">{{survey.level}}</span>&#39;s</span>&nbsp;in
+													<span class="text-capitalize emphasis">{{survey.career}}</span>.
+
+												</p>
+											</td>
+										</tr>
+										
+										
+									</table>
+										
+
+								</div>
+							</div><!--row-->
+						</div><!--container-fluid-->
+					</div><!--panel-body-->
+
+				</div><!--panel-->
+			</div><!-- ReportCtrl -->
+			
+		</div>
+	</div>
+</div>

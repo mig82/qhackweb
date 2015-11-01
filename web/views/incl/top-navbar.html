@@ -1,0 +1,32 @@
+<!--nav class="navbar topbar" data-ng-controller="UserCtrl"-->
+<nav class="navbar topbar" data-ng-controller="NavBarCtrl">
+	<div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+
+			<a class="navbar-brand cupidog-brand" ui-sref="about">
+				<img src="img/topbar_logo.svg">
+			</a>
+
+			<!--button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1"-->
+			<button type="button" class="burger-btn navbar-toggler" data-ng-click="openNavbar()">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="glyphicon glyphicon-menu-hamburger"></span>
+			</button>
+
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div data-ng-class="navbarClass">
+			<ul class="nav navbar-nav" >
+				<li data-ng-repeat="m in menu">
+					<a class="topbar-nav" data-ng-class="m.activeClass" ui-sref="{{m.gotoState}}" data-ng-click="toggleActiveClass($index)">
+						<span class="text-capitalize">{{m.title}}</span>
+					</a>
+				</li>
+			</ul>	
+		</div><!-- /.navbar-collapse -->
+
+	</div><!-- /.container-fluid -->
+</nav>
+

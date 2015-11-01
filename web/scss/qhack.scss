@@ -1,0 +1,125 @@
+@import 'media-query-breakpoints';
+@import 'common-mixins';
+@import 'colors';
+@import 'buttons';
+@import 'login';
+@import 'skills-list';
+@import 'rag';
+@import 'topnavbar';
+@import 'skills-select';
+
+@import 'reports';
+@import 'spider-chart';
+@import 'vert-group-bar-chart';
+
+svg.bg-pattern{
+	display: none;
+}
+
+.nav, .pagination, .carousel, .panel-title a {
+	cursor: pointer;
+}
+
+.profile-pic-container{
+	max-height: 100px;
+	max-width: 100px;
+	margin-bottom: 15px;
+	position: relative;
+
+	.profile-pic-img{
+		@include box-shadow-helper(1);
+		position: absolute;
+		top: -40px;
+		cursor: pointer;
+		background-color: #fff;
+		max-width: 4em;
+		max-height: 4em;
+		min-width: 4em;
+		min-height: 4em;
+	}
+}
+
+.stopwatch{
+	max-width: 2em;
+	max-height: 2em;
+}
+
+body{
+		font-size: 12px;
+}
+
+@media screen and (max-width: $screen-xs-max) {
+	.main-container{
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+
+	.no-padding-xs{
+		padding: 0.5em;
+
+		.col-xs-12{
+			padding-right: 0;
+			padding-left: 0;
+		}
+	}
+
+	body{
+		font-size: 10px;
+	}
+}
+
+.my-row{
+	padding: 0.5em 0;
+	border-bottom: 1px solid #DDD;
+	
+	.my-col{
+		padding-left: 5px;
+		padding-right: 5px; 
+	}
+
+	.my-col-narrow{
+		@extend .my-col;
+		max-width: 2em;
+	}
+}
+@media screen and (max-width: $screen-xs-max) {
+	.my-row{
+		padding-bottom: 1em;
+	}
+}
+
+h1, h2, h3, h4, h5, h6{
+	color: #666;
+}
+@media screen and (max-width: $screen-xs-max) {
+	h1, h2, h3, h4, h5, h6{
+		padding: 0 0.3em;
+	}
+}
+
+
+.selected{
+	background-color: #D0E9C6;
+}
+
+.small-help{
+	color: #666;
+	font-size: 0.65em;
+
+}
+
+/*
+input, select, textarea, span.readonly-field{
+	@include border-radius(0);
+	box-shadow: none !important;
+	border-top: none !important;
+	border-left: none !important;
+	border-right: none !important;
+	border-bottom: 2px solid $input-border-color !important;
+	padding: 6px 12px;
+	width: 100%;
+	display: block;
+	transition:0.5s linear all;
+	background-color: #fff;
+}*/
+

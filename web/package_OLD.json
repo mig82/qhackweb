@@ -1,0 +1,27 @@
+{
+  "name": "qhack",
+  "version": "1.0.0",
+  "description": "Career and talent development",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "browserify main.js --debug | exorcist bundle.js.map > bundle.js",
+    "watch": "watchify main.js -o 'exorcist bundle.js.map > bundle.js' --debug --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mig82/qhack.git"
+  },
+  "keywords": [
+    "career",
+    "development",
+    "talent",
+    "growth"
+  ],
+  "author": "Miguelangel Fernandez",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/mig82/qhack/issues"
+  },
+  "homepage": "https://github.com/mig82/qhack#readme"
+}

@@ -1,0 +1,39 @@
+{
+  "name": "qhack",
+  "version": "1.0.0",
+  "homepage": "https://github.com/mig82/qhack",
+  "description": "Carrer and talent development",
+  "main": "index.html",
+  "keywords": [
+    "career",
+    "talent",
+    "development",
+    "growth"
+  ],
+  "authors": [
+    "Miguelangel Fernandez"
+  ],
+  "license": "unlicensed",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.4.5",
+    "angular-bootstrap": "~0.13.4",
+    "angular-cookies": "~1.4.6",
+    "angular-sanitize": "~1.4.6",
+    "angular-touch": "~1.4.5",
+    "angular-ui-router": "~0.2.15",
+    "angular-ui-tinymce": "latest",
+    "bootstrap": "~3.3.5",
+    "ui-select": "angular-ui-select#~0.12.1",
+    "underscore": "~1.8.3"
+  },
+  "resolutions": {
+    "angular": "1.4.6"
+  }
+}

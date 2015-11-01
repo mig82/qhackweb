@@ -1,0 +1,23 @@
+<table class="table table-condensed">
+	<thead>
+		<tr>
+			<th class="text-capitalize">working relationship</th>
+			<th class="text-capitalize" data-ng-show="survey.isSent()">answered</th>
+			<th class="text-capitalize">invited</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr data-ng-repeat="(key, value) in survey.guestsSummary" class="{{survey.isSent()?(value.answered < value.invited?'warning':'success'):''}}">
+			<td>{{key}}</td>
+			<td data-ng-show="survey.isSent()">{{value.answered}}</td>
+			<td>{{value.invited}}</td>
+		</tr>
+	</tbody>
+	<tfoot>
+		<tr>
+			<td>Total</td>
+			<td data-ng-show="survey.isSent()">{{survey.guestsTotals.answered}}</td>
+			<td>{{survey.guestsTotals.invited}}</td>
+		</tr>
+	</tfoot>
+</table>
