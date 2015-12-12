@@ -31,7 +31,8 @@
     "angular-ui-tinymce": "latest",
     "bootstrap": "~3.3.5",
     "ui-select": "angular-ui-select#~0.12.1",
-    "underscore": "~1.8.3"
+    "underscore": "~1.8.3",
+    "angular-animate": "~1.4.7"
   },
   "resolutions": {
     "angular": "1.4.5"
