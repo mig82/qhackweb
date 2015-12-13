@@ -3,24 +3,55 @@
 	<div class="panel panel-default">
 		<div class="panel-heading">&nbsp;</div>
 		<div class="panel-body">
-			
-			<div class="profile-pic-container">
-				<img class="profile-pic-img" src="img/career-ninja-avatar2.svg">
-			</div>
-			<br>
+			<form name="infoForm">
+				<div class="profile-pic-container">
+					<img class="profile-pic-img" src="img/career-ninja-avatar2.svg">
+				</div>
+				<br>
 
-			<div class="input-group">
-				<span class="input-group-addon text-capitalize" id="user-name-label" >name</span>
-				<input type="text" class="form-control" placeholder="Your full name" aria-describedby="user-name-label" data-ng-model="survey.user.name">
-			</div>
-			<br>
-			
-			<div class="input-group">
-				<span class="input-group-addon" id="user-email-label" >e-mail</span>
-				<input type="email" class="form-control" placeholder="Your e-mail address" aria-describedby="user-email-label" data-ng-model="survey.user.email">
-			</div>
-			<br>
+				<div class="input-group">
+					<span class="input-group-addon text-capitalize" id="user-name-label" >name</span>
+					<input 	name="userName"
+							type="text" 
+							class="form-control" 
+							placeholder="Your full name" 
+							aria-describedby="user-name-label" 
+							data-ng-model="survey.user.name" 
+							required
+							ng-model-options="{ debounce: 500 }" >
+				</div>
+				<br>
+				
+				<div class="input-group">
+					<span class="input-group-addon" id="user-email-label" >e-mail</span>
+					<input 	name="userEmail"
+							type="email"
+							class="form-control"
+							placeholder="Your e-mail address"
+							aria-describedby="user-email-label"
+							data-ng-model="survey.user.email"
+							required
+							ng-model-options="{ debounce: 500 }"
+							validate-email >
+				</div>
+				<br>
 
+				<div class="input-group">
+					<span class="input-group-addon text-capitalize" id="user-location-label" >location</span>
+					<input 	name="userLocation"
+							type="text"
+							class="form-control"
+							placeholder="Where in the world would you like to grow your career?"
+							aria-describedby="user-location-label"
+							data-ng-model="survey.user.loc.addr"
+							id="userLocAddr" gmaps-places-autoc >
+				</div>
+			</form>
+			<br>
+			<button type="button" class="btn btn-default btn-block" data-ng-click="showNextStep()" collapse="!showDoneBtn">
+				<span class="glyphicon glyphicon-ok"></span>&nbsp;
+				<span class="text-capitalize">done</span>
+			</button>
 		</div>
 	</div>
 </div>

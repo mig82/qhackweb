@@ -11,9 +11,11 @@ var ReportCtrl = require('./js/ctrl/ReportCtrl');
 var StatusCtrl = require('./js/ctrl/StatusCtrl');
 var NavBarCtrl = require('./js/ctrl/NavBarCtrl');
 
+var validateEmail = require('./js/dir/validateEmail');
 var skillsList = require('./js/dir/skillsList');
 var spiderwebChart = require('./js/dir/spiderweb-chart');
 var vertGroupBarChart = require('./js/dir/vert-group-bar-chart');
+require('./js/dir/GmapsPlacesAutoc');
 
 var SessionSrv = require('./js/srv/SessionSrv');
 

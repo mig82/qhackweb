@@ -47,6 +47,15 @@ angular.module('qhack').controller('GuestSelectCtrl', ['$scope', function($scope
 		//Ojo:, pueden haber guests vacíos en la lista.
 	}
 
+	$scope.$watchCollection('survey.guests.length', function(newLength, oldLength){
+		$scope.showDoneBtn = newLength > 0;
+	});
+
+	$scope.showNextStep = function(){
+		$scope.showSteps.invitation = true;
+	}
+
+
 	$scope.calcGuestsSummary = function() {
 		/*$scope.survey.gSumm = _.countBy($scope.survey.guests, function(guest){
 			if(guest.type.name)
@@ -56,6 +65,8 @@ angular.module('qhack').controller('GuestSelectCtrl', ['$scope', function($scope
 	};
 
 	$scope.calcGuestsSummary();
+
+
 
 }]);
 

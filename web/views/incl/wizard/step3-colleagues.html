@@ -8,46 +8,9 @@
 				<p>Tell us who have you worked with recently and what was their working relationship with you.</p>
 			</span>
 
-			<!--table class="table table-hover table-condensed">
-				<tr>
-					<th class="text-capitalize"><input type="checkbox" data-ng-click="toggleAllInvitations()"></th>
-					<th class="text-capitalize">name</th>
-					<th class="text-capitalize">working relationship</th>
-					<th>e-mail</th>
-					<th>&nbsp;</th>
-				</tr>
-
-				<tr data-ng-repeat="guest in guestOptions" data-ng-class="{success:guest.selected}" data-ng-click="toggleGuestSelection(guest, $index)">
-					<td>
-						<input type="checkbox" data-ng-model="guest.selected" data-ng-change="toggleGuestSelection(guest)">
-					</td>
-					<td>
-						<input type="text" class="form-control text-capitalize" data-ng-model="guest.name">
-					</td>
-					<td>
-						<ui-select data-ng-model="guest.type" data-ng-change="calcGuestsSummary()"
-							theme="bootstrap" >
-							<ui-select-match placeholder="Select a type..." class="text-capitalize">{{$select.selected.name}}</ui-select-match>
-							<ui-select-choices repeat="type in feedbackTypes | filter: $select.search">
-								<span class="text-capitalize" ng-bind-html="type.name | highlight: $select.search" title="{{type.desc}}"></span>
-								
-							</ui-select-choices>
-						</ui-select>
-					</td>
-					<td>
-						<input type="text" class="form-control" data-ng-model="guest.email" placeholder="youremail@yourdomain.com">
-					</td>
-					<td>
-						<button type="button" class="flat-btn" data-ng-click="removeGuestOptionAt($index)">
-							<span class="glyphicon glyphicon-remove"></span>
-						</button>
-					</td>
-				</tr>
-			</table-->
-
 			<div class="container-fluid">
 				<div class="row my-row" >
-					<div class="col-xs-1 my-col"></div>
+					<div class="col-xs-1 my-col"><!--The select column--></div>
 
 					<div class="col-xs-10 my-col">
 
@@ -59,7 +22,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-xs-1 my-col"></div>
+					<div class="col-xs-1 my-col"><!--The remove column--></div>
 				</div>
 
 				<div class="row my-row" data-ng-repeat="guest in guestOptions" data-ng-class="{'selected':guest.selected}" >
@@ -101,18 +64,23 @@
 							<span class="glyphicon glyphicon-remove"></span>
 						</button>
 					</div>
-
 				</div>
-				
+			</div><!--The colleagues table-->
+			<div class="position-relative">
+				<button type="button" class="floating-btn" data-ng-click="addGuestOption()">
+					<span class="glyphicon glyphicon-plus"></span>
+				</button>
 			</div>
 			<br>
 
+			<button type="button" class="btn btn-default btn-block" data-ng-click="showNextStep()" collapse="!showDoneBtn">
+				<span class="glyphicon glyphicon-ok"></span>&nbsp;
+				<span class="text-capitalize">done</span>
+			</button>
+
 		</div><!--panel-body-->
 		
-		<div class="position-relative">
-			<button type="button" class="floating-btn" data-ng-click="addGuestOption()">
-				<span class="glyphicon glyphicon-plus"></span>
-			</button>
-		</div>
+		
+
 	</div>
 </div>

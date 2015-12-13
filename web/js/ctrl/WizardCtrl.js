@@ -16,6 +16,15 @@ angular.module('qhack').controller('WizardCtrl', ['$scope', '$state', 'Survey', 
 		email: ""
 	};
 
+	$scope.showSteps = {
+		info: true,
+		career: false,
+		skills: false,
+		colleagues: false,
+		invitation: false,
+		summary: false
+	};
+
 	$scope.survey = new Survey(
 		$scope.user, //user
 		"", // career

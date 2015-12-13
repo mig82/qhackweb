@@ -16,33 +16,6 @@
 				<input type="text" data-ng-model="skillSearch" class="form-control" placeholder="Quick search skills relevant to you by keywords">
 			</div>
 
-			<!--Table of skills found as a result of the search by key words -->
-			<!--div class="table-responsive" style="max-height:300px; overflow-y:auto">
-				<table class="table table-hover table-condensed">
-					<tr>
-						<th class="text-capitalize"><input type="checkbox" data-ng-click="toggleAll()"></th>
-						<th class="text-capitalize">skill</th>
-						<th class="text-capitalize"><small>Others with your career</small></th>
-						<th class="text-capitalize"><small>Others at your level in your career</small></th>
-					</tr>
-
-					<tr data-ng-repeat="s in skills | filter:skillSearch track by s.id" data-ng-class="{success:s.selected}">
-						<td>
-							<input type="checkbox" data-ng-model="s.selected" data-ng-change="toggleSkillSelect(s)">
-						</td>
-						<td><span class="text-capitalize"><small>{{s.name}}</small></span></td>
-						<td>
-							<rating class="skill-rating" data-ng-model="s.rankings.rank1.value" max="max" readonly="true" titles="['very low','low','average', 'high', 'very high']" ></rating>
-							<span class="label" ng-class="s.rankings.rank1.labelClass" >{{s.rankings.rank1.percent}}%</span>
-						</td>
-						<td>
-							<rating class="skill-rating" data-ng-model="s.rankings.rank2.value" max="max" readonly="true" titles="['very low','low','average', 'high', 'very high']" ></rating>
-							<span class="label" ng-class="s.rankings.rank2.labelClass" >{{s.rankings.rank2.percent}}%</span>
-						</td>
-					</tr>
-				</table>
-			</div-->
-
 			<!--skills table header-->
 			<div class="container-fluid hidden-xs">
 				<div class="container-fluid">
@@ -152,7 +125,10 @@
 			</button>
 			<br>
 			
-			
+			<button type="button" class="btn btn-default btn-block" data-ng-click="showNextStep()" collapse="!showDoneBtn">
+				<span class="glyphicon glyphicon-ok"></span>&nbsp;
+				<span class="text-capitalize">done</span>
+			</button>
 		</div>
 	</div>
 </div>

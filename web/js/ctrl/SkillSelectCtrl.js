@@ -5,34 +5,6 @@ angular.module('qhack').controller('SkillSelectCtrl', ['$scope', 'Skill', functi
 	$scope.max = 5;
 	$scope.firstNToCheck = 5;
 
-	/*	Assume rank1 to be the ranking among people in the same career,
-		and rank2 the ranking among people with the same career and seniority.
-	*/
-	/*$scope.skills = _.sortBy([
-		{ id:  1, etc: 2, type: 'i', rankings: { rank1: {value: 5, percent: 0, labelClass: '' }, rank2: {value: 5, percent: 0, labelClass: '' } },	name: "communication", 						},
-		{ id:  2, etc: 2, type: 'i', rankings: { rank1: {value: 5, percent: 0, labelClass: '' }, rank2: {value: 4, percent: 0, labelClass: '' } },	name: "leadership", 						},
-		{ id:  3, etc: 2, type: 'i', rankings: { rank1: {value: 5, percent: 0, labelClass: '' }, rank2: {value: 4, percent: 0, labelClass: '' } },	name: "teamwork", 							},
-		{ id:  4, etc: 2, type: 'i', rankings: { rank1: {value: 5, percent: 0, labelClass: '' }, rank2: {value: 4, percent: 0, labelClass: '' } },	name: "effective presentations", 			},
-		{ id:  5, etc: 2, type: 'i', rankings: { rank1: {value: 4, percent: 0, labelClass: '' }, rank2: {value: 5, percent: 0, labelClass: '' } },	name: "results orientation", 				},
-		{ id:  6, etc: 2, type: 'i', rankings: { rank1: {value: 4, percent: 0, labelClass: '' }, rank2: {value: 5, percent: 0, labelClass: '' } },	name: "time management", 					},
-		{ id:  7, etc: 2, type: 'i', rankings: { rank1: {value: 4, percent: 0, labelClass: '' }, rank2: {value: 5, percent: 0, labelClass: '' } },	name: "thinks outside the box", 			},
-		{ id:  8, etc: 2, type: 'i', rankings: { rank1: {value: 3, percent: 0, labelClass: '' }, rank2: {value: 4, percent: 0, labelClass: '' } },	name: "attention to detail", 				},
-		{ id:  9, etc: 2, type: 'i', rankings: { rank1: {value: 3, percent: 0, labelClass: '' }, rank2: {value: 5, percent: 0, labelClass: '' } },	name: "analytical thinking", 				},
-		{ id: 10, etc: 2, type: 'i', rankings: { rank1: {value: 3, percent: 0, labelClass: '' }, rank2: {value: 4, percent: 0, labelClass: '' } },	name: "applies technology to tasks", 		},
-		{ id: 11, etc: 2, type: 'i', rankings: { rank1: {value: 3, percent: 0, labelClass: '' }, rank2: {value: 4, percent: 0, labelClass: '' } },	name: "change management", 					},
-		{ id: 12, etc: 2, type: 'i', rankings: { rank1: {value: 3, percent: 0, labelClass: '' }, rank2: {value: 4, percent: 0, labelClass: '' } },	name: "conflict management", 				},
-		{ id: 13, etc: 2, type: 'i', rankings: { rank1: {value: 3, percent: 0, labelClass: '' }, rank2: {value: 4, percent: 0, labelClass: '' } },	name: "creative thinking", 					},
-		{ id: 14, etc: 2, type: 'i', rankings: { rank1: {value: 3, percent: 0, labelClass: '' }, rank2: {value: 4, percent: 0, labelClass: '' } },	name: "customer focus", 					},
-		{ id: 15, etc: 2, type: 'i', rankings: { rank1: {value: 3, percent: 0, labelClass: '' }, rank2: {value: 4, percent: 0, labelClass: '' } },	name: "decision making", 					},
-		{ id: 16, etc: 2, type: 'i', rankings: { rank1: {value: 3, percent: 0, labelClass: '' }, rank2: {value: 4, percent: 0, labelClass: '' } },	name: "developing others", 					},
-		{ id: 17, etc: 2, type: 'i', rankings: { rank1: {value: 2, percent: 0, labelClass: '' }, rank2: {value: 4, percent: 0, labelClass: '' } },	name: "diagnostic information gathering",	},
-		{ id: 18, etc: 2, type: 'i', rankings: { rank1: {value: 2, percent: 0, labelClass: '' }, rank2: {value: 3, percent: 0, labelClass: '' } },	name: "empowering others", 					},
-		{ id: 19, etc: 2, type: 'i', rankings: { rank1: {value: 4, percent: 0, labelClass: '' }, rank2: {value: 3, percent: 0, labelClass: '' } },	name: "ethics and integrity", 				},
-		{ id: 20, etc: 2, type: 'i', rankings: { rank1: {value: 1, percent: 0, labelClass: '' }, rank2: {value: 3, percent: 0, labelClass: '' } },	name: "flexibility", 						}
-	], function(skill){
-		return -skill.rankings.rank2.value;
-	});*/
-
 	$scope.skills = _.sortBy([
 		new Skill( 1, 2, 'i', { rank1: {value: 5, percent: 0, labelClass: '' }, rank2: {value: 5, percent: 0, labelClass: '' } }, "communication" 						),
 		new Skill( 2, 2, 'i', { rank1: {value: 5, percent: 0, labelClass: '' }, rank2: {value: 4, percent: 0, labelClass: '' } }, "leadership" 							),
@@ -84,6 +56,14 @@ angular.module('qhack').controller('SkillSelectCtrl', ['$scope', 'Skill', functi
 
 		//console.log(_.pluck($scope.survey.skills, 'name'))
 	};
+
+	$scope.$watchCollection('survey.skills.length', function(newLength, oldLength){
+		$scope.showDoneBtn = newLength > 0;
+	});
+
+	$scope.showNextStep = function(){
+		$scope.showSteps.colleagues = true;
+	}
 
 }]);
 
