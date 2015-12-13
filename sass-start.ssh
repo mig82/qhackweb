@@ -1,1 +1,0 @@
-sass --watch web/scss/qhack.scss:web/css/qhack.css
