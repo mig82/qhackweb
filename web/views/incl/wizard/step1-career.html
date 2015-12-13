@@ -14,6 +14,7 @@
 						popover="This is about where YOU WANT TO GO. Not about where you are right now. Pick what YOU want to be, not what your company expects you to be :)"
 						popover-title="Important:"
 						popover-trigger="focus"
+						popover-enable="!survey.career"
 						required
 						ng-model-options="{ debounce: 500 }" >
 				</div>
@@ -28,7 +29,8 @@
 						placeholder="Your seniority or level of experience"
 						popover="If you've consistently done well in previous evaluations, consider aiming for the next step in your career."
 						popover-title="Hint:"
-						popover-trigger="focus">
+						popover-trigger="focus"
+						popover-enable="!survey.level">
 				</div>
 				<br>
 
@@ -41,7 +43,8 @@
 						placeholder="Are you pursuing a career in any specific industry?"
 						popover="The way your colleagues in the market value different skills may vary between industries."
 						popover-title="Hint:"
-						popover-trigger="focus">
+						popover-trigger="focus"
+						popover-enable="!survey.industry">
 				</div>
 				<br>
 
