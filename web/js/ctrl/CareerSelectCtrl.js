@@ -26,6 +26,7 @@ angular.module('qhack').controller('CareerSelectCtrl', ['$scope', function($scop
 
 	$scope.showNextStep = function(){
 		$scope.showSteps.skills = true;
+		$scope.scrollToElm('skillsStepDiv');
 	}
 	
 }]);

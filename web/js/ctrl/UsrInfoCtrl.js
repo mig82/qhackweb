@@ -8,6 +8,7 @@ angular.module('qhack').controller('UsrInfoCtrl', ['$scope', function($scope){
 
 	$scope.showNextStep = function(){
 		$scope.showSteps.career = true;
+		$scope.scrollToElm('careerStepDiv');
 	}
 
 }]);

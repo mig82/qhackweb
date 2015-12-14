@@ -12,7 +12,9 @@ angular.module('qhack').controller('CustMsgCtrl', ['$scope', '$sce', function($s
 
 	$scope.showNextStep = function(){
 		$scope.showSteps.summary = true;
+		$scope.scrollToElm('summaryStepDiv');
 	}
+
 
 }]);
 

@@ -1,7 +1,7 @@
 
 "use strict";
 
-var app = angular.module('qhack', ['ui.router', 'ui.bootstrap', 'ui.tinymce', 'ui.select', 'ngSanitize', 'ngCookies', 'ngAnimate', 'ngTouch'])
+var app = angular.module('qhack', ['ui.router', 'ui.bootstrap', 'ui.tinymce', 'ui.select', 'ngSanitize', 'ngCookies', 'ngAnimate', 'ngTouch', 'duScroll'])
 
 .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 

@@ -1,13 +1,13 @@
 <div class="_container" data-ng-controller="WizardCtrl">
 	<div class="row">
 				
-		<div class="col-xs-12" data-ng-include="'views/incl/user-info.html'"    			collapse="!showSteps.info"></div>
-		<div class="col-xs-12" data-ng-include="'views/incl/wizard/step1-career.html'" 		collapse="!showSteps.career"></div>
-		<div class="col-xs-12" data-ng-include="'views/incl/wizard/step2-skills.html'" 		collapse="!showSteps.skills"></div>
-		<div class="col-xs-12" data-ng-include="'views/incl/wizard/step3-colleagues.html'" 	collapse="!showSteps.colleagues"></div>
-		<div class="col-xs-12" data-ng-include="'views/incl/wizard/step4-invitation.html'"	collapse="!showSteps.invitation"></div>
-		<div class="col-xs-12" data-ng-include="'views/incl/wizard/survey-summary.html'" 	collapse="!showSteps.summary"></div>
+		<div id="infoStepDiv" 		class="col-xs-12" data-ng-include="'views/incl/user-info.html'"    				collapse="!showSteps.info"></div>
+		<div id="careerStepDiv" 	class="col-xs-12" data-ng-include="'views/incl/wizard/step1-career.html'" 		collapse="!showSteps.career"></div>
+		<div id="skillsStepDiv" 	class="col-xs-12" data-ng-include="'views/incl/wizard/step2-skills.html'" 		collapse="!showSteps.skills"></div>
+		<div id="colleaguesStepDiv" class="col-xs-12" data-ng-include="'views/incl/wizard/step3-colleagues.html'" 	collapse="!showSteps.colleagues"></div>
+		<div id="invitationStepDiv" class="col-xs-12" data-ng-include="'views/incl/wizard/step4-invitation.html'"	collapse="!showSteps.invitation"></div>
+		<div id="summaryStepDiv" 	class="col-xs-12" data-ng-include="'views/incl/wizard/survey-summary.html'" 	collapse="!showSteps.summary"></div>
 
 	</div>
-	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<div id="crollHeightPatch"></div>
 </div>

@@ -51,11 +51,6 @@ angular.module('qhack').controller('GuestSelectCtrl', ['$scope', function($scope
 		$scope.showDoneBtn = newLength > 0;
 	});
 
-	$scope.showNextStep = function(){
-		$scope.showSteps.invitation = true;
-	}
-
-
 	$scope.calcGuestsSummary = function() {
 		/*$scope.survey.gSumm = _.countBy($scope.survey.guests, function(guest){
 			if(guest.type.name)
@@ -63,10 +58,12 @@ angular.module('qhack').controller('GuestSelectCtrl', ['$scope', function($scope
 		});*/
 		$scope.survey.recalcGuestsSummary();
 	};
-
 	$scope.calcGuestsSummary();
 
-
+	$scope.showNextStep = function(){
+		$scope.showSteps.invitation = true;
+		$scope.scrollToElm('invitationStepDiv');
+	}
 
 }]);
 
