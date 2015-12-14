@@ -1,5 +1,5 @@
 <div data-ng-controller="CustMsgCtrl">
-	<h2 class="_text-capitalize" id="invitationStepHeading">4. Add a Custom Invitation Message</h2>
+	<h2 class="_text-capitalize" >4. Add a Custom Invitation Message</h2>
 	<div class="panel panel-default">
 		<div class="panel-heading">&nbsp;</div>
 		<div class="panel-body">
@@ -15,9 +15,9 @@
 			<h3>Preview</h3>
 			<div class="well" ng-bind-html="trustedCustMsg"></div>
 
-			<button type="button" class="btn btn-default btn-block" data-ng-click="showNextStep()" collapse="!showDoneBtn">
+			<button type="button" class="btn btn-default btn-block" data-ng-click="showNextStep(4)" collapse="!showDoneBtn">
 				<span class="glyphicon glyphicon-ok"></span>&nbsp;
-				<span class="text-capitalize">done</span>
+				<span class="text-capitalize">next</span>
 			</button>
 
 		</div>

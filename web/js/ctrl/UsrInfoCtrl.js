@@ -6,10 +6,10 @@ angular.module('qhack').controller('UsrInfoCtrl', ['$scope', function($scope){
 		$scope.showDoneBtn = $scope.infoForm.$valid && newUser.name.trim() !== "" && newUser.email.trim() !== "";
 	});
 
-	$scope.showNextStep = function(){
+	/*$scope.showNextStep = function(){
 		$scope.showSteps.career = true;
 		$scope.scrollToElm('careerStepDiv');
-	}
+	}*/
 
 }]);
 

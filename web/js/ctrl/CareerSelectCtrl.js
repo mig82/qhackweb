@@ -24,10 +24,10 @@ angular.module('qhack').controller('CareerSelectCtrl', ['$scope', function($scop
 		$scope.showDoneBtn = $scope.careerForm.$valid && newCareer.trim() !== "";
 	});
 
-	$scope.showNextStep = function(){
+	/*$scope.showNextStep = function(){
 		$scope.showSteps.skills = true;
 		$scope.scrollToElm('skillsStepDiv');
-	}
+	}*/
 	
 }]);
 

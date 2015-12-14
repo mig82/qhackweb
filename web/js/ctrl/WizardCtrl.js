@@ -18,17 +18,6 @@ angular.module('qhack').controller('WizardCtrl',
 		email: ""
 	};
 
-	$scope.showSteps = {
-		info: true,
-		career: false,
-		skills: false,
-		colleagues: false,
-		invitation: false,
-		summary: false
-	};
-
-	var currentStep = 0;
-
 	$scope.survey = new Survey(
 		$scope.user, //user
 		"", // career
@@ -50,26 +39,49 @@ angular.module('qhack').controller('WizardCtrl',
 		$state.go('main.status');
 	};
 
-	$scope.scrollToElm = function(elmId){
-		var elm = angular.element(  document.getElementById(elmId)  );
 
-		$timeout(function(){
+	$scope.steps = [
+		{stepId: 'info', 		divId: 'infoStepDiv', 		show: true},
+		{stepId: 'career', 		divId: 'careerStepDiv', 	show: false},
+		{stepId: 'skills', 		divId: 'skillsStepDiv', 	show: false},
+		{stepId: 'colleagues', 	divId: 'colleaguesStepDiv', show: false},
+		{stepId: 'invitaiton', 	divId: 'invitaitonStepDiv', show: false},
+		{stepId: 'summary', 	divId: 'summaryStepDiv', 	show: false},
+	];
 
-			var diff = getWindowHeight() - Math.ceil10(getComputedHeight(elmId),1);
-			console.log("dif for %s: %o", elmId, diff);
+	$scope.showNextStep = function(stepIndex){
 
-			if(diff>0){
-				document.getElementById('crollHeightPatch').style.height = diff + 'px';
-			}
-			else{
-				document.getElementById('crollHeightPatch').style.height = '0px';
-			}
+		var step = $scope.steps[stepIndex + 1];
 
-			$document.scrollToElementAnimated(   elm, 0, 1000   );
-		},500);
+		if(step.show){ //If it has already been displayed just scroll down to it.
+			$document.scrollToElementAnimated(  angular.element(  '#'+step.divId  ), 0, 1000  ); //Animated scroll-down.
+		}
+		else{ //If it has not yet been displayed...
 			
-	};
+			var windowHeight = getWindowHeight();
+			document.getElementById('scrollHeightPatch').style.height = windowHeight + 'px'; //Make space for scrolling down.
+			$document.scrollToElementAnimated(  angular.element(  '#scrollHeightPatch'  ), 0, 1000  ); //Animated scroll-down.
+			
 
+			$timeout(function displayNextStep() { //Wait for scroll-down to complete
+				step.show = true; // Display next step.
+			}, 1000);
+			
+			$timeout(function adjustScrollHeightPatch(){ //Wait for scroll-down + uncollapse to complete
+				var diff = windowHeight - Math.ceil10(getComputedHeight(step.divId),1); //Calculate height difference between content and window.
+				console.log("height diff for %s: %o", step.divId, diff);
+
+				if(diff>0){
+					document.getElementById('scrollHeightPatch').style.height = diff + 'px'; // Reduce filling height to bare minimum.
+				}
+				else{
+					document.getElementById('scrollHeightPatch').style.height = '0px'; // Reduce filling to 0 height as content is big enough.
+				}
+			}, 1500);
+		}
+
+		
+	}
 }]);
 
 

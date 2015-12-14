@@ -61,10 +61,10 @@ angular.module('qhack').controller('SkillSelectCtrl', ['$scope', 'Skill', functi
 		$scope.showDoneBtn = newLength > 0;
 	});
 
-	$scope.showNextStep = function(){
+	/*$scope.showNextStep = function(){
 		$scope.showSteps.colleagues = true;
 		$scope.scrollToElm('colleaguesStepDiv');
-	}
+	}*/
 
 }]);
 

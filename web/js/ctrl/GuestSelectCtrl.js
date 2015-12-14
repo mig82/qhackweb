@@ -60,10 +60,10 @@ angular.module('qhack').controller('GuestSelectCtrl', ['$scope', function($scope
 	};
 	$scope.calcGuestsSummary();
 
-	$scope.showNextStep = function(){
+	/*$scope.showNextStep = function(){
 		$scope.showSteps.invitation = true;
 		$scope.scrollToElm('invitationStepDiv');
-	}
+	}*/
 
 }]);
 
