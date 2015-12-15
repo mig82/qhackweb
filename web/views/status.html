@@ -30,7 +30,7 @@
 
 								<div class="col-xs-12 col-md-6">
 									
-									
+									<!--TODO: Don't know what to do with this space yet-->
 
 								</div>
 							</div><!--row-->
@@ -48,16 +48,19 @@
 					<div class="panel-body no-padding-xs">
 						<div class="container-fluid">
 							<div class="row report-row">
+								
 								<div class="col-xs-12 col-md-4" >
 									<h5>How your colleagues see you.</h5>
 									<vert-group-bar-chart chart-id="'barchart1'" data="d[0]"></vert-group-bar-chart>
 									<br>
 								</div>
+								
 								<div class="col-xs-12 col-md-4">
 									<h5>Compared with others with a similar career.</h5>
 									<vert-group-bar-chart chart-id="'barchart2'" data="d[1]"></vert-group-bar-chart>
 									<br>
 								</div>
+								
 								<div class="col-xs-12 col-md-4">
 									<h5 class="text-capitalize">analysis</h5>
 									<table class="analysis-table" data-ng-class="{
@@ -88,13 +91,40 @@
 												</p>
 											</td>
 										</tr>
-										
-										
 									</table>
-										
-
 								</div>
 							</div><!--row-->
+
+							<div class="row report-row" data-ng-init="skillComments = survey.comments[skillName]">
+								<div class="col-xs-12">
+									<button class="flat-btn" data-ng-click="skillComments.show = !skillComments.show">additional comments</button>
+								</div>
+								<div class="col-xs-12" collapse="!skillComments.show">
+									<div data-ng-repeat="entry in skillComments.entries" class="position-relative">
+										<button class="floating-btn" data-ng-click="entry.show = !entry.show">
+											<span class="glyphicon glyphicon-envelope"></span>
+										</button>
+										<blockquote>
+											<span>{{entry.comment}}</span>
+											<footer>{{entry.author}}</footer>
+										</blockquote>
+										<div collapse="entry.show">
+											<textarea class="form-control" rows="3" data-ng-change="soSomething()"
+												ui-tinymce data-ng-model="msgPlaceholder"
+												placeholder="Hi, Thanks for your feedback. I don't understand this bit...">
+											</textarea>
+											<br>
+
+											<button type="button" class="btn btn-default btn-block" >
+												<span class="glyphicon glyphicon-send"></span>&nbsp;
+												<span class="text-capitalize">send</span>
+											</button>
+										</div>
+										<hr>
+									</div>
+								</div>
+							</div>
+
 						</div><!--container-fluid-->
 					</div><!--panel-body-->
 

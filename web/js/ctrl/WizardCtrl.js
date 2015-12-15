@@ -55,8 +55,6 @@ angular.module('qhack').controller('WizardCtrl',
 		}, 1550);
 	};
 
-window.$scope = $scope;
-
 	$scope.gotoStatus = function(){
 		$state.go('main.status');
 	}

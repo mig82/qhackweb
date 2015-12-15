@@ -2,6 +2,8 @@
 
 angular.module('qhack').controller('ReportCtrl', ['$scope', 'SessionSrv', function($scope, SessionSrv){
 
+	window.$scope = $scope;
+
 	//Let's assume we get the survey results form the server...
 
 	function getRandomFloat(){
@@ -44,6 +46,10 @@ angular.module('qhack').controller('ReportCtrl', ['$scope', 'SessionSrv', functi
 	];*/
 
 	//var data = [ [],[] ];
+	
+	/*******************************************/
+	/*****This is for the spiderweb charts******/
+	/*******************************************/
 	var data = [{
 			className: "self",
 			axes: []
@@ -67,7 +73,7 @@ angular.module('qhack').controller('ReportCtrl', ['$scope', 'SessionSrv', functi
 		data[1].axes.push(scoreRest);
 	};
 	$scope.data = data;
-	$scope.survey = survey;
+
 
 	var ragClasses = {};
 	var skillCount = data[0].axes.length;
@@ -114,7 +120,7 @@ angular.module('qhack').controller('ReportCtrl', ['$scope', 'SessionSrv', functi
 	};*/
 
 	
-
+	survey.comments = {};
 	var dataSets = [];
 	var diffs = {};
 	var skillsCount = skills.length;
@@ -173,10 +179,18 @@ angular.module('qhack').controller('ReportCtrl', ['$scope', 'SessionSrv', functi
 			value: diff, //IMPORTANT: This is assuming series[0] is 'you' and series[1] is 'others'.
 			rag: rag
 		};
+
+		survey.comments[skill] = {
+			show: false,
+			entries: [
+				{author: "Peter", show: true, comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. "},
+				{author: "Maria", show: true, comment: "Vivamus fermentum semper porta. Nunc diam velit, adipiscing ut tristique vitae, sagittis vel odio. Maecenas convallis ullamcorper ultricies. Curabitur ornare, ligula semper consectetur sagittis, nisi diam iaculis velit, id fringilla sem nunc vel mi. Nam dictum, odio nec pretium volutpat, arcu ante placerat erat, non tristique elit urna et turpis. Quisque mi metus, ornare sit amet fermentum et, tincidunt et orci. "},
+			]
+		};
 	}
 	$scope.dataSets = dataSets;
 	$scope.diffs = diffs;
-
+	$scope.survey = survey;
 }]);
 
 

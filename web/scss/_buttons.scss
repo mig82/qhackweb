@@ -7,7 +7,6 @@
 	&:hover,
 	&:active{
 		text-decoration: none;
-		color: #fff !important;
 	}
 }
 
@@ -21,7 +20,7 @@
 	@include box-shadow-helper(2);
 	width: 2.5em;
 	height: 2.5em;
-	background-color: $brick-red-color;
+	background-color: $brick-color;
 	color: $white-color;
 	text-align: center;
 	border: none;
@@ -35,21 +34,34 @@
 		background-color: red;
 		transform: scale(1.1);
 	}
+	&:active{
+		color: #fff !important;
+	}
 }
 
 .raised-btn{
 	@extend .material-btn; 
 	@include box-shadow-helper(2);
-	background-color: $brick-red-color;
+	background-color: $brick-color;
 	border: none;
 	color: $white-color;
 	padding: 0.5em 2em;
+	
+	&:hover,
+	&:active{
+		color: #fff !important;
+	}
 }
 
 .flat-btn{
 	@extend .material-btn; 
 	background-color: $white-color;
 	border: none;
-	color: $cyan-color;
+	color: $teal-color;
+
+	&:hover,
+	&:active{
+		color: $cyan-color !important;
+	}
 }
 
