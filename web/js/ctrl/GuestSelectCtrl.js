@@ -34,7 +34,7 @@ angular.module('qhack').controller('GuestSelectCtrl', ['$scope', function($scope
 
 	$scope.toggleGuestSelection = function(guest, index){
 		
-		console.log("toggling %o %o", guest, index)
+		//console.log("toggling %o %o", guest, index)
 		if(guest.selected){
 			$scope.survey.addGuest(guest);
 		}
@@ -59,11 +59,6 @@ angular.module('qhack').controller('GuestSelectCtrl', ['$scope', function($scope
 		$scope.survey.recalcGuestsSummary();
 	};
 	$scope.calcGuestsSummary();
-
-	/*$scope.showNextStep = function(){
-		$scope.showSteps.invitation = true;
-		$scope.scrollToElm('invitationStepDiv');
-	}*/
 
 }]);
 

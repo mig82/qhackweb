@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module('qhack').controller('StatusCtrl', ['$scope', 'Survey', 'SessionSrv', function($scope, Survey, SessionSrv){
+angular.module('qhack').controller('StatusCtrl', ['$scope', '$document', 'Survey', 'SessionSrv', function($scope, $document, Survey, SessionSrv){
 
 	$scope.survey = SessionSrv.getSurvey();
 
@@ -19,9 +19,6 @@ angular.module('qhack').controller('StatusCtrl', ['$scope', 'Survey', 'SessionSr
 	}
 
 	$scope.writeReminderIsCollapsed = true;
-
-	//window.$scope = $scope;
-
 }]);
 
 

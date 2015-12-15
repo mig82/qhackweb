@@ -23,11 +23,6 @@ angular.module('qhack').controller('CareerSelectCtrl', ['$scope', function($scop
 	$scope.$watchCollection('survey.career', function(newCareer, oldCareer){
 		$scope.showDoneBtn = $scope.careerForm.$valid && newCareer.trim() !== "";
 	});
-
-	/*$scope.showNextStep = function(){
-		$scope.showSteps.skills = true;
-		$scope.scrollToElm('skillsStepDiv');
-	}*/
 	
 }]);
 

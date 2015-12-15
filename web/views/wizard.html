@@ -1,13 +1,18 @@
 <div class="_container" data-ng-controller="WizardCtrl">
-	<div class="row">
+	<div class="row" data-ng-show="showWizardSteps">
 				
-		<div id="{{steps[0].divId}}" class="col-xs-12" data-ng-include="'views/incl/user-info.html'"			 	collapse="!steps[0].show"></div>
-		<div id="{{steps[1].divId}}" class="col-xs-12" data-ng-include="'views/incl/wizard/step1-career.html'" 	 	collapse="!steps[1].show"></div>
-		<div id="{{steps[2].divId}}" class="col-xs-12" data-ng-include="'views/incl/wizard/step2-skills.html'" 		collapse="!steps[2].show"></div>
-		<div id="{{steps[3].divId}}" class="col-xs-12" data-ng-include="'views/incl/wizard/step3-colleagues.html'" 	collapse="!steps[3].show"></div>
-		<div id="{{steps[4].divId}}" class="col-xs-12" data-ng-include="'views/incl/wizard/step4-invitation.html'" 	collapse="!steps[4].show"></div>
-		<div id="{{steps[5].divId}}" class="col-xs-12" data-ng-include="'views/incl/wizard/survey-summary.html'"  	collapse="!steps[5].show"></div>
+		<div id="{{steps[0].divId}}" class="col-xs-12" data-ng-include="'views/incl/user-info.html'"			 	collapse="!steps[0].show" ></div>
+		<div id="{{steps[1].divId}}" class="col-xs-12" data-ng-include="'views/incl/wizard/step1-career.html'" 	 	collapse="!steps[1].show" ></div>
+		<div id="{{steps[2].divId}}" class="col-xs-12" data-ng-include="'views/incl/wizard/step2-skills.html'" 		collapse="!steps[2].show" ></div>
+		<div id="{{steps[3].divId}}" class="col-xs-12" data-ng-include="'views/incl/wizard/step3-colleagues.html'" 	collapse="!steps[3].show" ></div>
+		<div id="{{steps[4].divId}}" class="col-xs-12" data-ng-include="'views/incl/wizard/step4-invitation.html'" 	collapse="!steps[4].show" ></div>
+		<div id="{{steps[5].divId}}" class="col-xs-12" data-ng-include="'views/incl/wizard/step5-summary.html'"  	collapse="!steps[5].show" ></div>
 
 	</div>
+
+	<div class="row">
+		<div id="{{steps[6].divId}}" class="col-xs-12" data-ng-include="'views/incl/wizard/step6-sent.html'"  		collapse="!steps[6].show" ></div>
+	</div>
+
 	<div id="scrollHeightPatch"></div>
 </div>
